@@ -62,8 +62,7 @@ export default function (): Plugin {
 
           curr = iter.next(resolve(dirname(id), src));
         }
-
-        console.log(curr.value);
+        
         return curr.value;
       }
 
