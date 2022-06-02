@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["ES2020"],
+    "moduleResolution": "node",
+    "outDir": "build",
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "target": "ES6"
+  },
+}
