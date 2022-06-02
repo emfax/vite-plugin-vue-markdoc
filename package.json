@@ -1,9 +1,13 @@
 {
-  "name": "vite-plugin-vue-markdoc",
-  "version": "0.0.3",
+  "name": "@emfax/vite-plugin-vue-markdoc",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Matt Andrews",
   "description": "Markdoc for Vite",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emfax/vite-plugin-vue-markdoc"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
