@@ -127,6 +127,10 @@ export default function (): Plugin {
         }
       }
 
+      while (toc.length > 1) {
+        foldToc(toc);
+      }
+
       return generateModule(routes, toc.pop());
     },
   };
