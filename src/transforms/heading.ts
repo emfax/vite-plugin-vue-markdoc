@@ -25,7 +25,7 @@ function generateID(node: Node, attributes: { [key: string]: unknown }) {
   return id;
 }
 
-export const heading = {
+export default {
   children: ["inline"],
   
   attributes: {
