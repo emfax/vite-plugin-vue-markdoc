@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { beforeAll, describe, expect, test } from "vitest";
 import Markdoc from "@markdoc/markdoc"; 
-import { heading } from "../src/transforms/heading";
+import heading from "../src/transforms/heading";
 
 let md = "";
 

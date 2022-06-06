@@ -15,7 +15,7 @@ function generateID(node: Node, attributes: { [key: string]: unknown }) {
     if (child.type === "text") {
       const text = child.attributes.content as string;
 
-      id = text.replace(/[.,]/g, "-")
+      id = text.replace(/[:.,]/g, "-")
         .replace(/\s+/g, '-')
         .replace(/-{2,}/g, '-')
         .toLowerCase();
