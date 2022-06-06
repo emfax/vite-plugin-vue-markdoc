@@ -17,8 +17,8 @@
       "require": "./dist/index.js"
     },
     "./transforms": {
-      "import": "./dist/transforms/*.mjs",
-      "require": "./dist/transforms/*.js"
+      "import": "./dist/transforms",
+      "require": "./dist/transforms"
     }
   },
   "files": [
