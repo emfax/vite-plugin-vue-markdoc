@@ -21,7 +21,7 @@ const filter = (id: string) => {
 
 const INDEX_RE = /index\.md$/i;
 
-export default function (): Plugin {
+export default function (options: Record<string, unknown> = {}): Plugin {
   return {
     enforce: "pre",
 
@@ -55,7 +55,7 @@ export default function (): Plugin {
       }
 
       if (id.endsWith(".md.vue")) {
-        const iter = markdocToVue(source, { nodes: { link }});
+        const iter = markdocToVue(source, options);
         let curr = iter.next();
         while (!curr.done) {
           const src = curr.value;
