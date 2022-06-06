@@ -8,7 +8,6 @@ import { cwd } from "node:process";
 import { readFileSync } from "node:fs";
 import yaml from "js-yaml";
 import { addObjectProperty } from "./ast";
-import link from "./transforms/link";
 
 export interface Options {
   markdoc: Record<string, string>;
