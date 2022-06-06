@@ -1,0 +1,3 @@
+// Vitest Snapshot v1
+
+exports[`heading transformer > the correct id is generated 1`] = `"<article><h1 id=\\"introduction\\">Introduction</h1></article>"`;
