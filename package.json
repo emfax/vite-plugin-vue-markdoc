@@ -1,6 +1,6 @@
 {
   "name": "@emfax/vite-plugin-vue-markdoc",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "license": "MIT",
   "author": "Matt Andrews",
   "description": "Markdoc for Vite",
