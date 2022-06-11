@@ -1,7 +1,9 @@
 import {
   ArrayExpression,
+  ArrowFunctionExpression,
   ExportNamedDeclaration,
   Expression,
+  Literal,
   ObjectExpression,
   Program,
   Property,
@@ -16,6 +18,55 @@ export function newArrayExpression(): ArrayExpression {
     type: "ArrayExpression",
     elements: [],
   };
+}
+
+export function newExportNamedDeclaration(name: string, init: Expression): ExportNamedDeclaration {
+  return {
+    type: "ExportNamedDeclaration",
+    declaration: {
+      type: "VariableDeclaration",
+      declarations: [
+        {
+          type: "VariableDeclarator",
+          "id": {
+            type: "Identifier",
+            name,
+          },
+          init,
+        }
+      ],
+      kind: "const",
+    },
+    specifiers: [],
+  };
+}
+
+export function newImportFunction(path: string): ArrowFunctionExpression {
+  return {
+    type: "ArrowFunctionExpression",
+    expression: true,
+    generator: false,
+    async: false,
+    params: [],
+    body: {
+      type: "ImportExpression",
+      source: {
+        type: "Literal",
+        value: path,
+      },
+    }
+  };
+}
+
+export function newLiteral(value?: string | number): Literal {
+  return {
+    type: "Literal",
+    value,
+  };
+}
+
+export function newObjectExpression(): ObjectExpression {
+  return { type: "ObjectExpression", properties: [] };
 }
 
 export function arrayExpressionPush(arr: ArrayExpression, element: Expression) {

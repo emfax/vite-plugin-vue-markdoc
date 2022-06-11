@@ -1,5 +1,6 @@
 import { Tag } from "@markdoc/markdoc";
 import type { Node, Schema } from "@markdoc/markdoc";
+import slugify from "slugify";
 
 // Or replace this with your own function
 function generateID(node: Node, attributes: { [key: string]: unknown }) {
@@ -15,10 +16,7 @@ function generateID(node: Node, attributes: { [key: string]: unknown }) {
     if (child.type === "text") {
       const text = child.attributes.content as string;
 
-      id = text.replace(/[:.,]/g, "-")
-        .replace(/\s+/g, '-')
-        .replace(/-{2,}/g, '-')
-        .toLowerCase();
+      id = slugify(text);
     }
   }
 

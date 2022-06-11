@@ -1,6 +1,6 @@
 import Markdoc from "@markdoc/markdoc";
 
-export default function* markdocToVue(source: string, options): Generator<string, string, string> {
+export default function* markdocToVue(source: string, options = {}): Generator<string, string, string> {
   const ast = Markdoc.parse(source);
 
   for (const child of ast.walk()) {

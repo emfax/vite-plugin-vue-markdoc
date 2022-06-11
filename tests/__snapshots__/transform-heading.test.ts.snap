@@ -1,3 +1,3 @@
 // Vitest Snapshot v1
 
-exports[`heading transformer > the correct id is generated 1`] = `"<article><h1 id=\\"introduction\\">Introduction</h1><h2 id=\\"level-two-heading\\">Level Two Heading</h2><h3 id=\\"level-three-with-punctuation-a-tale\\">Level Three, With Punctuation: A tale</h3></article>"`;
+exports[`heading transformer > the correct id is generated 1`] = `"<article><h1 id=\\"Introduction\\">Introduction</h1><h2 id=\\"Level-Two-Heading\\">Level Two Heading</h2><h3 id=\\"Level-Three-With-Punctuation:-A-tale\\">Level Three, With Punctuation: A tale</h3></article>"`;
