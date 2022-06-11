@@ -2,44 +2,44 @@
 
 exports[`index importer > tricky index 1`] = `
 "export const routes = [{
-  path: \\"/\\",
+  path: \\"/path/to/docs/\\",
   component: () => import(\\"/README.md\\")
 }, {
-  path: \\"/level-one\\",
+  path: \\"/path/to/docs/level-one\\",
   component: () => import(\\"/level-one.md\\")
 }, {
-  path: \\"/level-two\\",
+  path: \\"/path/to/docs/level-two\\",
   component: () => import(\\"/level-two.md\\")
 }, {
-  path: \\"/level-three\\",
+  path: \\"/path/to/docs/level-three\\",
   component: () => import(\\"/level-three.md\\")
 }, {
-  path: \\"/level-four\\",
+  path: \\"/path/to/docs/level-four\\",
   component: () => import(\\"/level-four.md\\")
 }, {
-  path: \\"/again\\",
+  path: \\"/path/to/docs/again\\",
   component: () => import(\\"/again.md\\")
 }];
 export const toc = [{
-  path: \\"/\\",
+  path: \\"/path/to/docs/\\",
   text: \\"Introduction\\"
 }, {
-  path: \\"/level-one\\",
+  path: \\"/path/to/docs/level-one\\",
   text: \\"Level One\\",
   children: [{
-    path: \\"/level-two\\",
+    path: \\"/path/to/docs/level-two\\",
     text: \\"Level Two\\",
     children: [{
-      path: \\"/level-three\\",
+      path: \\"/path/to/docs/level-three\\",
       text: \\"Level Three\\",
       children: [{
-        path: \\"/level-four\\",
+        path: \\"/path/to/docs/level-four\\",
         text: \\"Level Four\\"
       }]
     }]
   }]
 }, {
-  path: \\"/again\\",
+  path: \\"/path/to/docs/again\\",
   text: \\"Back to Level One\\"
 }];
 "

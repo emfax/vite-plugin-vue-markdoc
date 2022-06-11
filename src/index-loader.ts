@@ -1,4 +1,4 @@
-import { dirname, join, resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import Markdoc from "@markdoc/markdoc";
 import type { Node } from "@markdoc/markdoc";
 import { Ok, Err, Result } from "./common";
@@ -19,29 +19,6 @@ import {
   newProperty,
 } from "./ast";
 
-/**
- * Decrement the last item in an array of integers and return the new value.
- * Return null if list is empty.
- * 
- * @param stack 
- */
-function decrementTail(stack: number[]): number | null {
-  if (stack.length === 0) return null;
-  const result = --stack[stack.length - 1];
-
-  return result;
-}
-
-function foldToc(arrays: ArrayExpression[]): void {
-  if (arrays.length <= 1) return;
-
-  const children = arrays.pop();
-  const parentArray = arrays[arrays.length - 1];
-  const parentObject = parentArray.elements.pop() as ObjectExpression;
-  addObjectProperty(parentObject, "children", children);
-  parentArray.elements.push(parentObject);
-}
-
 function generateModule(routes: ArrayExpression, toc: ArrayExpression): string {
   return generate(
     newProgram(
@@ -50,27 +27,6 @@ function generateModule(routes: ArrayExpression, toc: ArrayExpression): string {
     )
   );
 }
-
-function last<T>(arr: T[]): T | null {
-  if (arr.length === 0) return null;
-  
-  return arr[arr.length - 1];
-}
-
-// function newTocItem(text: string, path?: string): ObjectExpression {
-//   const properties = [
-//     newProperty("text", { type: "Literal", value: text }),
-//   ];
-
-//   if (path) {
-//     properties.push(newProperty("path", { type: "Literal", value: path }));
-//   }
-
-//   return {
-//     type: "ObjectExpression",
-//     properties,
-//   };
-// }
 
 function newRouteRecord(path: string, url: string): ObjectExpression {
   return {
@@ -113,10 +69,8 @@ export function indexLoader(source: string, id: string): Result<string | null, s
           node = node.children[0]; // node.type === "link"
           
           if (node.attributes.href) {
-            const path = resolve(
-              frontmatter.baseUrl || "",
-              node.attributes.href.replace(/(readme)?\.md$/i, "")
-            );
+            const path = resolve(frontmatter.baseUrl || "", node.attributes.href)
+              .replace(/(readme)?\.md$/i, "");
             const url = resolve(dirname(id), node.attributes.href);
 
             addObjectProperty(tocItem, "path", newLiteral(path));

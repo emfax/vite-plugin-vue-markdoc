@@ -1,5 +1,5 @@
 ---
-baseUrl: /
+baseUrl: /path/to/docs
 ---
 
 - [Introduction](./README.md)
