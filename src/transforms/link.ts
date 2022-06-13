@@ -1,7 +1,7 @@
 import { Tag } from "@markdoc/markdoc";
 import type { Node, Schema } from "@markdoc/markdoc";
 
-export default {
+export const link = {
   attributes: {
     href: String,
     title: String,

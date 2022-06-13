@@ -23,7 +23,7 @@ function generateID(node: Node, attributes: { [key: string]: unknown }) {
   return id;
 }
 
-export default {
+export const heading = {
   children: ["inline"],
   
   attributes: {

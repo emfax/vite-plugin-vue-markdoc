@@ -1,2 +1,2 @@
-export * as heading from "./heading";
-export * as link from "./link";
+export { heading } from "./heading";
+export { link } from "./link";

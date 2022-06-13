@@ -5,6 +5,7 @@ import { cwd } from "node:process";
 import { readFileSync } from "node:fs";
 import { indexLoader } from "./index-loader";
 
+// Export Markdoc types
 export { Tag } from "@markdoc/markdoc";
 export type { Node } from "@markdoc/markdoc";
 
