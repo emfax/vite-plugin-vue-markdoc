@@ -5,6 +5,8 @@ import { cwd } from "node:process";
 import { readFileSync } from "node:fs";
 import { indexLoader } from "./index-loader";
 
+export type { Node } from "@markdoc/markdoc";
+
 export interface Options {
   markdoc: Record<string, string>;
 }
